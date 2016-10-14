@@ -9,7 +9,11 @@ if [ -f .heroku/python-version ]; then
       rm -fr .heroku/python
     bpwatch stop uninstall_python
   else
-    SKIP_INSTALL=1
+   bpwatch start uninstall_python
+      puts-step "Found $(cat .heroku/python-version), removing"
+      rm -fr .heroku/python
+    bpwatch stop uninstall_python
+    #SKIP_INSTALL=1
   fi
 fi
 

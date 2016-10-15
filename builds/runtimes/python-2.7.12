@@ -15,6 +15,7 @@ cd src
 echo "export flags"
 export CXXFLAGS="$CXXFLAGS -fPIC"
 ./configure --prefix=$OUT_PREFIX  --with-ensurepip=no --enable-shared
+make clean
 make
 make install
 ldconfig -v

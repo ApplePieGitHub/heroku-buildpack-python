@@ -3,7 +3,7 @@
 # Build Deps: libraries/sqlite
 
 OUT_PREFIX=$1
-
+make clean
 
 echo "Building Python..."
 SOURCE_TARBALL='https://python.org/ftp/python/2.7.12/Python-2.7.12.tgz'
@@ -13,6 +13,7 @@ cd src
 
 echo "export flags"
 export CXXFLAGS="$CXXFLAGS -fPIC -g"
+export LDFLAGS="$LDFLAGS -fPIC -g"
 ./configure --prefix=$OUT_PREFIX  --with-ensurepip=no --enable-shared
 make
 make install

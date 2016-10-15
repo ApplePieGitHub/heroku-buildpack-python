@@ -16,4 +16,4 @@ echo "export flags"
 ./configure --prefix=$OUT_PREFIX  --with-ensurepip=no --enable-shared
 make
 make install
-ldconfig -v
+

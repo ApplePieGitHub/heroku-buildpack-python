@@ -12,7 +12,7 @@ mv Python-2.7.12 src
 cd src
 
 echo "export flags"
-
+export CXXFLAGS="$CXXFLAGS -fPIC -g"
 ./configure --prefix=$OUT_PREFIX  --with-ensurepip=no --enable-shared
 make
 make install
